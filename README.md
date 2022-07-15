@@ -1,2 +1,3 @@
-# nextjs-markdown-blog-typescript
-A markdown blog with table of contents, built with Next.js and TypeScript
+# nextjs-markdown-blog-with-toc
+
+A markdown blog with an auto-generated table of contents widget, built with Next.js
