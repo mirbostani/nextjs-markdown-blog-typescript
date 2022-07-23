@@ -1,0 +1,119 @@
+/* globals.css */
+:root {
+  --margin: 1rem;
+  --muted-color: gray;
+  --hover-color: #f7f7f7;
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+body {
+  margin-bottom: 15rem;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.posts {
+  margin: 2rem auto;
+  max-width: 1024px;
+  border: 1px solid var(--muted-color);
+}
+
+.card {
+  padding: 1rem 2rem;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: var(--hover-color);
+}
+
+.card .desc,
+.post .desc {
+  margin-top: 0;
+}
+
+.card .meta,
+.post .meta {
+  display: flex;
+  flex-direction: row;
+  gap: 16px;
+  color: var(--muted-color);
+  margin-top: 0;
+}
+
+.ml1 {
+  margin-left: 1rem;
+}
+
+.ml2 {
+  margin-left: 2rem;
+}
+
+.ml3 {
+  margin-left: 3rem;
+}
+
+.post {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+.post .wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.post .content {
+  margin: 2rem 0;
+}
+
+.post .sidebar {
+  display: flex;
+  flex-direction: column;
+  margin-left: var(--margin);
+}
+
+.post .toc ul {
+  padding: 0;
+}
+
+.post .toc li {
+  list-style-type: none;
+  font-weight: normal;
+}
+
+.post .toc li.active {
+  font-weight: 800 !important;
+}
+
+@media (min-width: 1024px) {
+  .post .wrapper {
+    flex-direction: row-reverse;
+  }
+
+  .post .sidebar {
+    align-self: flex-start;
+    width: 300px;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 1rem;
+  }
+
+  .post .content {
+    width: calc(100% - var(--margin) - 300px);
+  }
+}
