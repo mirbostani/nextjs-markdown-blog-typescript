@@ -59,9 +59,13 @@ export default function Post({ slug, post }) {
     };
     const onScroll = (e) => {
       const currScrollTop = e.target.documentElement.scrollTop;
-      setScrollTop(currScrollTop);
-      updateTocAnchors(e);
-    };
+      setScrollTop((prevScrollTop, props) => {
+        updateTocAnchors(e);
+        if (Math.abs(prevScrollTop - currScrollTop) > 200) {
+          return currScrollTop;
+        }
+      });
+    };    
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollTop]);
